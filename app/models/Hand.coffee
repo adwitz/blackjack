@@ -3,9 +3,13 @@ class window.Hand extends Backbone.Collection
   model: Card
 
   initialize: (array, @deck, @isDealer) ->
+    @myScore is 0
 
   hit: -> @add(@deck.pop()).last()
-  
+
+  stand: ->
+    @trigger 'stand', @
+
   scores: ->
     # The scores are an array of potential scores.
     # Usually, that array contains one element. That is the only score.
@@ -16,6 +20,6 @@ class window.Hand extends Backbone.Collection
     score = @reduce (score, card) ->
       score + if card.get 'revealed' then card.get 'value' else 0
     , 0
-    score = if hasAce then [score, score + 10] else [score]
+    @myScore = score = if hasAce then [score, score + 10] else [score]
     @trigger 'scoreUpdate', score, @
     score
