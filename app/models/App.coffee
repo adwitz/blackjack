@@ -9,7 +9,7 @@ class window.App extends Backbone.Model
     player.on 'stand', @dealerPlays, @
 
   checkScore: (score, participant) ->
-    if score > 21 then @gameOver(score, participant)
+    if @returnScore(score) > 21 then @gameOver()
   
   dealerPlays: ->
     @get('dealerHand').models[0].flip()
@@ -19,13 +19,17 @@ class window.App extends Backbone.Model
     @gameOver()
 
   gameOver: (score, participant) ->
-    if @get('playerHand').myScore > 21
-      #you bust!
+    playerScore = @returnScore(@get('playerHand').myScore)
+    dealerScore = @returnScore(@get('dealerHand').myScore)
+    console.log('player', playerScore, 'dealer', dealerScore)
+
+    if playerScore > 21
+      #you b@returnScore(ust!
       @trigger 'endRound', 'BUSTED', @
-    else if @get('playerHand').myScore == @get('dealerHand').myScore
+    else if playerScore == dealerHand
       #tie 
       alert 'else if'
-    else if @get('playerHand').myScore > @get('dealerHand').myScore || @get('dealerHand').myScore > 21
+    else if playerScore > dealerHand || dealerHand > 21
       # 'You Win!'
       alert 'else if'
     else
@@ -39,7 +43,6 @@ class window.App extends Backbone.Model
 
   returnScore: (myScore) ->
     if myScore.length is 2
-      if 17 <= myScore[1] <= 21
-        myScore[1]
+      if myScore[1] <= 21 then myScore[1] else myScore[0]
     else
       myScore[0]
