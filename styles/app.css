@@ -3,24 +3,61 @@ body {
   /*-webkit-background-size: cover;*/
   /*-moz-background-size: cover;*/
   /*-o-background-size: cover;*/
-
   background-size: auto 100%;
+  font-family: 'MostWasted';
+  font-size: 1.6em;
+  color: orange;
+  text-shadow: 2px 2px blue;
+}
+
+@font-face {
+  font-family: 'MostWasted';
+  src: url('../fonts/mostwasted/Mostwasted.ttf');
+}
+
+@font-face {
+  font-family: 'GangBangCrime';
+  src: url('../fonts/gang_bang_crime/gangbangcrime.ttf');
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
 }
 
 .dealer {
   position: absolute;
   right: 20%;
   bottom: 4%;
+  -webkit-animation: readyToFight 0.5s linear 0.5s infinite alternate;
 }
 
 .player {
   position: absolute;
-  left: 20%;
+  left: 15%;
   bottom: 6%;
+  -webkit-animation: readyToFight 0.5s linear 0.5s infinite alternate;
+}
+
+.player-hand-container {
+  text-align: left;
+  position: absolute;
+  top: 1%;
+  left: 3%;
+  width: 40%;
+}
+
+.dealer-hand-container {
+  text-align: right;
+  position: absolute;
+  top: 1%;
+  right: 3%;
+  width: 40%;
 }
 
 .card {
   float: left;
+  font-size: 0.9em;
   border: solid 1px black;
   width: 100px;
   border-radius: 5px;
@@ -35,3 +72,36 @@ body {
 .hand {
   overflow: auto;
 }
+
+.healthBar {
+  background-color: red;
+  width: 98%;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.hit-button {
+  position: absolute;
+  bottom: 2%;
+  right: 38%;
+  height: 5%;
+  width: 10%;
+}
+
+.stand-button {
+  position: absolute;
+  bottom: 2%;
+  left: 38%;
+  height: 5%;
+  width: 10%;
+}
+
+/* animate players */
+/* This is the animation code. */
+@-webkit-keyframes readyToFight {
+   0% { -webkit-transform: scaleY(1.0); }
+   100% { -webkit-transform: scaleY(1.07); }
+}
+
+
