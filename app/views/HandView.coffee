@@ -15,4 +15,4 @@ class window.HandView extends Backbone.View
     @$el.append @collection.map (card) ->
       new CardView(model: card).$el
     #why use @.$
-    @$('.score').text @collection.scores()[0]
+    @$('.score').text @collection.scores()[0] + if @collection.scores().length === 2 then ' + ' + @collection.scores()[1] else '' 

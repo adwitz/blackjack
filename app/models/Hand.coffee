@@ -5,9 +5,12 @@ class window.Hand extends Backbone.Collection
   initialize: (array, @deck, @isDealer) ->
     @myScore is 0
 
-  hit: -> @add(@deck.pop()).last()
+  hit: -> 
+    @add(@deck.pop()).last()
+    @trigger 'scoreUpdate', @scores() , @
 
-  stand: ->
+
+  stand: -> 
     @trigger 'stand', @
 
   scores: ->
@@ -21,5 +24,4 @@ class window.Hand extends Backbone.Collection
       score + if card.get 'revealed' then card.get 'value' else 0
     , 0
     @myScore = score = if hasAce then [score, score + 10] else [score]
-    @trigger 'scoreUpdate', score, @
     score
