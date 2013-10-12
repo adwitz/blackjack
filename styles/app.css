@@ -1,8 +1,8 @@
 body {
   background: url(../img/Dirty_Back_alley.jpg) no-repeat center center fixed;
-  /*-webkit-background-size: cover;*/
-  /*-moz-background-size: cover;*/
-  /*-o-background-size: cover;*/
+  -webkit-background-size: auto 100%;
+  -moz-background-size: auto 100%;
+  -o-background-size: auto 100%;
   background-size: auto 100%;
   font-family: 'MostWasted';
   font-size: 1.6em;
@@ -56,13 +56,21 @@ h2 {
 }
 
 .card {
-  float: left;
+  background: white;
   font-size: 0.9em;
-  border: solid 1px black;
+  border: solid 1px DarkBlue;
   width: 100px;
   border-radius: 5px;
   height: 140px;
   margin-right: 20px;
+}
+
+.player-hand-container .card {
+  float: left;
+}
+
+.dealer-hand-container .card {
+  float: right;
 }
 
 .covered {
@@ -77,24 +85,38 @@ h2 {
   background-color: red;
   width: 98%;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid Darkray;
   border-radius: 5px;
 }
 
 .hit-button {
+  font-family: 'GangBangCrime';
+  letter-spacing: 0.2em;
+  color: red;
   position: absolute;
   bottom: 2%;
-  right: 38%;
+  right: 36%;
   height: 5%;
   width: 10%;
 }
 
+.hit-button:hover{
+  color: DarkRed;
+}
+
 .stand-button {
+  font-family: 'GangBangCrime';
+  letter-spacing: 0.1em;
+  color: yellow;
   position: absolute;
   bottom: 2%;
-  left: 38%;
+  left: 36%;
   height: 5%;
   width: 10%;
+}
+
+.stand-button:hover{
+  color: orange;
 }
 
 /* animate players */
