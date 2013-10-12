@@ -4,6 +4,7 @@ class window.AppView extends Backbone.View
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
     <span class="hit-button">Hit</span> <span class="stand-button">Defend</span>
+    <span class="endRound"></span>
   '
 
   events:
@@ -12,7 +13,12 @@ class window.AppView extends Backbone.View
 
   initialize: -> 
     @model.on 'gameReset', @render, @
+    @model.on 'endRound', @endGame, @
     @render()
+
+  endGame: (message) ->
+    $('.endRound').html(message)
+    $('.endRound').delay().fadeOut(1500)
 
   render: ->
     @$el.children().detach()

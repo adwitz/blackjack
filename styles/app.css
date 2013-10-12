@@ -20,9 +20,26 @@ body {
   src: url('../fonts/gang_bang_crime/gangbangcrime.ttf');
 }
 
+@font-face {
+  font-family: 'Graffonti';
+  src: url('../fonts/graffonti/3dDrop.ttf');
+}
+
 h2 {
   margin: 0;
   padding: 0;
+}
+
+.endRound {
+  font-size: 7em;
+  font-family: Graffonti;
+  color: red;
+  text-shadow: 2px 2px black;
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  width: 90%;
+  z-index: 99;
 }
 
 .dealer {

@@ -20,14 +20,18 @@ class window.App extends Backbone.Model
 
   gameOver: (score, participant) ->
     if @get('playerHand').myScore > 21
-      confirmation = confirm 'You Busted!  Play again?'
+      #you bust!
+      @trigger 'endRound', 'BUSTED', @
     else if @get('playerHand').myScore == @get('dealerHand').myScore
-      confirmation = confirm 'Tie! Play again?'
+      #tie 
+      alert 'else if'
     else if @get('playerHand').myScore > @get('dealerHand').myScore || @get('dealerHand').myScore > 21
-      confirmation = confirm 'You Win! Play again?'
+      # 'You Win!'
+      alert 'else if'
     else
-      confirmation = confirm 'You Lose! Play again?'
-    if confirmation then @gameReset()
+    # you lose!
+      alert 'nothing'
+    setTimeout @gameReset.bind(@), 1500
 
   gameReset: ->
     @initialize()
