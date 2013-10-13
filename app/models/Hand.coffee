@@ -4,6 +4,7 @@ class window.Hand extends Backbone.Collection
 
   initialize: (array, @deck, @isDealer) ->
     @myScore is 0
+    @myHealth is 100 # what is going to prevent this from resetting?
 
   hit: -> 
     @add(@deck.pop()).last()

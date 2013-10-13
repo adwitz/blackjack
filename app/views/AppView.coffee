@@ -18,7 +18,7 @@ class window.AppView extends Backbone.View
 
   endGame: (message) ->
     $('.endRound').html(message)
-    $('.endRound').delay().fadeOut(1500)
+    $('.endRound').delay().fadeOut(2000)
 
   render: ->
     @$el.children().detach()

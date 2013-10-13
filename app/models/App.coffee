@@ -24,18 +24,19 @@ class window.App extends Backbone.Model
     console.log('player', playerScore, 'dealer', dealerScore)
 
     if playerScore > 21
-      #you b@returnScore(ust!
+      #you bust!
       @trigger 'endRound', 'BUSTED', @
-    else if playerScore == dealerHand
+    else if playerScore == dealerScore
       #tie 
-      alert 'else if'
-    else if playerScore > dealerHand || dealerHand > 21
+      @trigger 'endRound', 'DRAW', @
+    else if playerScore > dealerScore || dealerScore > 21
       # 'You Win!'
-      alert 'else if'
+      @trigger 'endRound', 'DEUCES WILD', @
     else
     # you lose!
-      alert 'nothing'
-    setTimeout @gameReset.bind(@), 1500
+      console.log 'never seen'
+      @trigger 'endRound', 'LOSER', @
+    setTimeout @gameReset.bind(@), 2000
 
   gameReset: ->
     @initialize()

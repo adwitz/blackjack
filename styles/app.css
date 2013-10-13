@@ -25,6 +25,12 @@ body {
   src: url('../fonts/graffonti/3dDrop.ttf');
 }
 
+@font-face {
+  font-family: 'TopSecret';
+  src: url('../fonts/topsecret/TopSecret.ttf');
+}
+
+
 h2 {
   margin: 0;
   padding: 0;
@@ -33,9 +39,10 @@ h2 {
 .endRound {
   padding: 3%;
   font-size: 7em;
-  font-family: Graffonti;
+  font-family: TopSecret;
   color: red;
-  text-shadow: 2px 2px black;
+  text-align: center;
+  text-shadow: 5px 5px black;
   position: absolute;
   left: 15%;
   top: 30%;
