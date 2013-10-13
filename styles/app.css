@@ -6,8 +6,8 @@ body {
   background-size: auto 100%;
   font-family: 'MostWasted';
   font-size: 1.6em;
-  color: orange;
-  text-shadow: 2px 2px blue;
+  color: #F09E5B;
+  text-shadow: 2px 2px #071E4A;
 }
 
 @font-face {
@@ -44,8 +44,9 @@ h2 {
   text-align: center;
   text-shadow: 5px 5px black;
   position: absolute;
-  left: 15%;
-  top: 30%;
+  left: 5%;
+  top: 22%;
+  -webkit-transform: rotate(-15deg);
   width: 90%;
   z-index: 99;
 }
@@ -88,6 +89,7 @@ h2 {
   border-radius: 5px;
   height: 140px;
   margin-right: 20px;
+  text-align: center;
 }
 
 .player-hand-container .card {
@@ -99,6 +101,8 @@ h2 {
 }
 
 .covered {
+  color: black;
+  text-shadow: none;
   background-color: black;
 }
 
@@ -107,17 +111,17 @@ h2 {
 }
 
 .healthBar {
-  background-color: red;
+  background-color: #AB272E;
   width: 98%;
   height: 40px;
-  border: 1px solid Darkray;
+  border: 1px solid DarkGray;
   border-radius: 5px;
 }
 
 .hit-button {
   font-family: 'GangBangCrime';
   letter-spacing: 0.2em;
-  color: red;
+  color: #AB272E;
   position: absolute;
   bottom: 2%;
   right: 36%;
@@ -129,10 +133,14 @@ h2 {
   color: DarkRed;
 }
 
+.score {
+  color: #B5367D;
+}
+
 .stand-button {
   font-family: 'GangBangCrime';
   letter-spacing: 0.1em;
-  color: yellow;
+  color: #CCC312;
   position: absolute;
   bottom: 2%;
   left: 36%;
